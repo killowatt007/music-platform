@@ -4,7 +4,7 @@ import {wrapper} from "../store";
 import '../styles/styles.scss'
 
 const WrappedApp: FC<AppProps> = ({Component, pageProps}) => (
-    <Component {...pageProps} />
+  <Component {...pageProps} />
 );
 
 export default wrapper.withRedux(WrappedApp);

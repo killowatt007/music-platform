@@ -2,25 +2,24 @@ import { Button, Card, Grid } from '@mui/material'
 import { Box } from '@mui/system'
 import { useRouter } from 'next/router'
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import TrackList from '../../components/TrackList'
-import { useActions } from '../../hooks/useActions'
 import { useTypedSelector } from '../../hooks/useTypedSelector'
 import MainLayout from '../../layouts/MainLayout'
 import { NextThunkDispatch, wrapper } from '../../store'
 import { fetchTracks } from '../../store/actions-creators/track'
-import { ITrack } from '../../types/track'
 
 const Index = () => {
   const router = useRouter()
   const {tracks, error} = useTypedSelector(state => state.track)
 
-  if (error) {
-    return 
-      <MainLayout>
-        <h1>{error}</h1>
-      </MainLayout>
-  }
+  console.log(tracks)
+
+  // if (error) {
+  //   return 
+  //     <MainLayout>
+  //       <h1>{error}</h1>
+  //     </MainLayout>
+  // }
 
   return (
     <MainLayout>

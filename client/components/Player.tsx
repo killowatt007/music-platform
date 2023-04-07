@@ -36,12 +36,15 @@ const Player = () => {
   }
 
   const play = () => {
-    if (pause) {
-      playTrack()
-      audio.play()
-    } else {
-      pauseTrack()
-      audio.pause()
+    if (active)
+    {
+      if (pause) {
+        playTrack()
+        audio.play()
+      } else {
+        pauseTrack()
+        audio.pause()
+      }
     }
   }
 

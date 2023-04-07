@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {ITrack} from "../../types/track";
 import MainLayout from "../../layouts/MainLayout";
-import {useRouter} from "next/router";
 import {GetServerSideProps} from "next";
-import { Button, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import axios from "axios";
 import CommentsTrack from '../../components/CommentsTrack';
+import Back from '../../components/Back';
 
 interface Props {
   serverTrack: ITrack;
@@ -13,16 +13,10 @@ interface Props {
 
 const TrackPage: React.FC<Props> = ({serverTrack}) => {
     const [track, setTrack] = useState<ITrack>(serverTrack)
-    const router = useRouter()
 
     return (
       <MainLayout>
-        <Button
-          variant={"outlined"}
-          onClick={() => router.push('/tracks')}
-        >
-          К списку
-        </Button>
+        <Back link="/tracks" />
         <Grid container style={{margin: '20px 0'}}>
           <img 
             src={'http://localhost:5000/' + track.picture}
